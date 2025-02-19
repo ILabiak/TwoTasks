@@ -5,9 +5,8 @@ const curry = (f) => {
   return function curried(...args) {
     if (args.length >= f.length) {
       return f(...args);
-    } else {
-      return (...additionalArgs) => curried(...args, ...additionalArgs);
     }
+    return (...additionalArgs) => curried(...args, ...additionalArgs);
   };
 };
 
